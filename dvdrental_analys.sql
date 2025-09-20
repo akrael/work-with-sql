@@ -39,9 +39,7 @@ select
     length  as "продолжительность фильма"
 from
     film f
-where f.length = 87
-or f.length = 116
-or f.length = 184
+where f.length in (87, 116, 184)
 --- Вывод фильмов по выбранной категории 
 --- работа с промежуточной таблицей
 select
@@ -73,3 +71,4 @@ from
 join actor a on fa.actor_id = a.actor_id
 group by name 
 having count(film_id) > 20
+
